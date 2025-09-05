@@ -6,6 +6,9 @@ abstract class Shape {
         this.title = title;
     }
 
-    abstract double calculationArea();
-    }
+    abstract double calculateArea();
+
+    abstract double calculatePerimetr();
+}
+
 
