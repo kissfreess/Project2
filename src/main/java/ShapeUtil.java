@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class ShapeUtil {
 
     Circle createRandomCircle(){
@@ -31,6 +34,35 @@ public class ShapeUtil {
             totalArea += shape.calculateArea();
         }
         return totalArea;
+    }
+
+    double calculatePerimeter(Shape[] shapes){
+        double totalPerimetr = 0;
+        if (shapes == null){
+            return totalPerimetr;
+        }
+        for (Shape shape : shapes) {
+            totalPerimetr += shape.calculatePerimetr();
+        }
+        return totalPerimetr;
+    }
+
+    double calculateArea(Shape shape) {
+        return shape.calculateArea();
+    }
+
+    double calculatePerimeter(Shape shape) {
+        return shape.calculatePerimetr();
+    }
+
+    List<Shape> findEquals(List<Shape> allShapes, Shape shapeToCompare){
+        List<Shape> equalsShape = new ArrayList<>();
+        for (Shape shape : allShapes) {
+            if (shape.equals(shapeToCompare)){
+                equalsShape.add(shape);
+            }
+        }
+        return equalsShape;
     }
 
 }

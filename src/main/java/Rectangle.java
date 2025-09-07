@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class Rectangle extends Shape{
     private double length;
     private double width;
@@ -27,5 +29,17 @@ public class Rectangle extends Shape{
                 "length=" + length +
                 ", width=" + width +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Rectangle rectangle = (Rectangle) o;
+        return Double.compare(length, rectangle.length) == 0 && Double.compare(width, rectangle.width) == 0;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(length, width);
     }
 }
